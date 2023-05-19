@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>TEST FORM</title>
+<style>
+    form{
+        background-color: beige;
+        width: 500px;
+        text-align: center;
+        padding: auto;
+    }
+
+
+</style>
+
+</head>
+<body>
+<h2>TEST FORM</h2>
+    <form action="http://jkorpela.fi/cgi-bin/echo.cgi">
+        <label for="fname">ชื่อ</label>
+         <input type="text" name="fname"><br><br>
+         <label for="Age">อายุ</label>
+         <input type="text" name="Age"><br>
+    
+
+         <input type="radio"  name="gender" value="Male">
+         <label for="Male"> ผู้หญิง</label>    
+         <input type="radio"  name="gender" value="Man">
+         <label for="Man"> ผู้ชาย</label>
+         <input type="radio"  name="gender" value="Other">
+         <label for="Other"> Other</label><br><br>
+         <input type="radio"  name="Status" value="single">
+         <label for="Man"> single</label>
+         <input type="radio"  name="Status" value="maria">
+         <label for="maria"> maria</label>
+    <br><br>
+        <fieldset>
+            <legend>checkbox</legend>
+        <input type="checkbox"  name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox"  name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox"  name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label><br><br>
+        
+    <br>
+        </fieldset>
+
+        <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+          <br>
+          <textarea name="message" rows="10" cols="30">The cat was playing in the garden.</textarea><br>
+
+          <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+  <br><br>
+
+  <input type="submit"  value="submit"><br>
+      </form>
+</body>
+</html>
