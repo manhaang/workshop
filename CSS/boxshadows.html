@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+h1{
+    color:red;
+    background-color: aquamarine;
+    width: 300px;
+    height: 200px;
+    /* outline: 5px dotted black; */
+    box-sizing: border-box;
+    text-align: center;
+    margin:50px auto   20px auto ;
+    border-radius: 20px; 
+    box-shadow :10px 10px 5px blueviolet;    
+}
+div{
+    background-color: yellowgreen;
+    padding: 30px;
+    display: none;
+  
+}
+span:hover + div{
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+
+</style>
+
+</head>
+<body>
+    
+    <h1 style="box-shadow: 10px 10px 5px gray;">HEADER1</h1>
+    <h1>HEADER2</h1>
+    <h1>HEADER3</h1>
+    <span>Hover over me!</span>
+<div>I will show on hover</div>
+    
+</body>
+</html>
+<!-- -----------------------------box-sizing;boder box คือการรวมขนาดของ border อยู่ในขนาดนั้นแล้ว -->
+<!-- -----------------------------margin:50px auto   20px auto ; คือการจัด Element ให้อยู่ตรงกลางของ Container -->
