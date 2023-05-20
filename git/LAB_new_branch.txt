@@ -1,0 +1,80 @@
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git branch -d feature-2
+warning: deleting branch 'feature-2' that has been merged to
+         'refs/remotes/origin/feature-2', but not yet merged to HEAD.
+Deleted branch feature-2 (was 4f9ec60).
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git branch
+  develop
+  feature-1
+* master
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git add .
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git commit -m "delete feature-2"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git push 
+Everything up-to-date
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git push -u origin feature-2
+error: src refspec feature-2 does not match any
+error: failed to push some refs to 'https://github.com/manhaang/workshop.git'
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git checkout feature-2
+Switched to a new branch 'feature-2'
+branch 'feature-2' set up to track 'origin/feature-2'.
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (feature-2)
+$ git status
+On branch feature-2
+Your branch is up to date with 'origin/feature-2'.
+
+nothing to commit, working tree clean
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (feature-2)
+$ git push -u origin feature-2
+Everything up-to-date
+branch 'feature-2' set up to track 'origin/feature-2'.
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (feature-2)
+$ git cheakout master
+git: 'cheakout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (feature-2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git branch
+warning: deleting branch 'feature-2' that has been merged to
+         'refs/remotes/origin/feature-2', but not yet merged to HEAD.
+Deleted branch feature-2 (was 4f9ec60).
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git branch
+  develop
+  feature-1
+* master
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git add .
+
+Sakon@SAKON-SE MINGW64 /d/Man/FullStack/workshop (master)
+$ git branch
+  develop
+  feature-1
+* master
