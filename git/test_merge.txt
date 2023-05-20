@@ -1,2 +1,2 @@
 CAT
-line2
+DOC
