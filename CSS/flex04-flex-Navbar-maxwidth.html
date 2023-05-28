@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab-web</title>
+    <style>
+*{margin: 0; padding: 0; box-sizing: border-box;}
+html { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body{
+    max-width: 1200px;
+    margin:auto;
+}
+
+header{
+    background-color: #F7DD72;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+    
+}
+main{
+    background-color: #A5C882;
+    background-image: url(https://picsum.photos/id/1015/1000);
+    height: 75vh;
+    display: flex;
+    
+}
+main > *{
+    outline: 1px dashed  lime;
+    flex: 1 ;
+}
+   
+    .main-c{
+flex-grow: 4;
+display: flex;
+flex-direction: column;
+text-align: center;
+justify-content: center;
+}
+
+.main-l{
+background-color: #5ab1bb63;
+}
+
+.main-r{
+background-color: #4e67667e;
+}
+
+
+
+
+footer{
+    background-color:#1e152a;
+    height: 10vh;
+}
+/* ------------------------------------------------เริ่มต้น Navbar---------------------------------------------- */
+.navigation{
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: flex-start;
+  background-color: #333;
+  list-style: none;
+  margin: 0;
+  flex-grow: 1;
+  
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+
+}
+
+
+.navigation a:hover {
+  background-color: #111;
+}
+  /* ----------------------------------------------------ปิด Navbar------------------------------------------- */
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="navigation">
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+    </header>
+    <main>
+        <div class="main-l">left</div>
+        <div class="main-c">
+            <h1>center</h1>
+            <p> Lorem ipsum dolor sit amet consec5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
+                5555555555555555555555555tetur, adipisicing elit. In perspiciatis veritatis, ullam iste cum necessitatibus sapiente, voluptates
+                 perferendis dolorem modi eos minima, commodi dolorum soluta sit reiciendis totam accusamus ad.</p>
+        </div>
+        <div class="main-r">right</div>
+
+    </main>
+    <footer>footer</footer>
+  
+</body>
+</html>
