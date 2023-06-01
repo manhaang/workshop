@@ -10,67 +10,133 @@
 html { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 
 
-main{
+body{
     background-color: #F0F2F5;
-    /* background-image: url(https://picsum.photos/id/1015/1000); */
+    font-family: 'Poppins',sans-serif;
+    color:#1c1e21;
     height: 90vh;
+    padding: 72px 0px 112px;
+}
+main {
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+.container {
     display: flex;
-    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    outline: dotted 2px red;
 }
-main > *{
-    outline: 1px dashed  lime;
-    flex: 1 ;
-}
-
-.container{
-            background-color: antiquewhite;
-            text-align: center;
-            width: 800px;
-            margin: 0px auto  ;
-            box-shadow: 10px 20px 10px gray;
-            outline: 1px dashed  lime;
-        }
-   
-    .main-2{
-flex-grow: 4;
-display: flex;
-flex-direction: row;
-text-align: center;
-justify-content: center;
+.col-logo {
+    flex: 0 0 50%;
+    text-align: left;
 }
 
-.div{
-    outline: 1px dashed  lime;
-    width: 300px;
-    height: 500px;
+.form {
+    display: block;
+    flex: 0 0 40%;
+    background-color: lime;
+
 
 }
-
+.form-container{
+    width: 396px;
+    height: 319px;
+    text-align: center;
+     outline: solid 2px red;
+    background-color: #ffffff;
+    border-radius: 10px 10px ;
+    min-width: 396px ;
+    border: none;
+    box-shadow: 10px 10px 10px gray;
+}
 
 
 footer{
-    background-color:#1e152a;
-    height: 10vh;
+    background-color:#ffffff;
+    height: 30vh;
 }
+
+.logo{
+    width: 400px;
+    height: 258px;
+    padding: 0px 32px 0px 0px;
+    text-align: right;
+    outline: solid 2px green;
+ 
+}
+
+.img{
+    max-width:300 px;
+}
+.้้้้h2{
+padding: 0px 0px 20px;
+color:#1c1e21
+}
+
+.form-container input ,.form-container .btn-login  {
+width: 95%;
+height: 45px;
+margin: 5px 0;
+font-size: 16px;
+border-radius: 5px;
+}
+
+.form-container input {
+    border: 1px solid #dddfe2;
+    color: #1d2129;
+    padding: 0 8px;
+    outline: none;
+
+}
+.form-container .btn-new {
+    width: 50%;
+height: 45px;
+margin: 5px 0;
+font-size: 16px;
+border:none;
+border-radius: 5px;
+background-color:#42b72a ;
+
+}
+
+
 
     </style>
     </head>
     
     <body>
-        <div class="container">
-            <main>
-    
-                <div class="main-2">
-                    <h1>center</h1>
-                    <p> Lorem ipsum dolor sit amet consec tetur, adipisicing elit. In perspiciatis veritatis, ullam iste cum
-                        necessitatibus sapiente, voluptates
-                        perferendis dolorem modi eos minima, commodi dolorum soluta sit reiciendis totam accusamus ad.</p>
+        <main>
+            <div class="container">
+                <div class="logo">
+                   <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Facebook">
+                    <h2>Facebook ช่วยคุณเชื่อมต่อและแชร์กับผู้คนมากมายรอบตัวคุณ</h2>
                 </div>
-    
-    
-            </main>
-            <footer>footer</footer>
-        </div>
+                <div class="form">
+                    <div class="form-container">
+                        <input type="text" placeholder="Email address or phone number">
+                        <input type="password" placeholder="Password">
+                        <button class="btn-login">Login</button>
+                        <a href="#">Forgotten password?</a>
+                        <button class="btn-new">Create new Account</button>
+                    </div>
+
+                    <p><a href="#"><b>สร้างเพจ</b></a>  สำหรับคนดัง แบรนด์ หรือธุรกิจ</p>
+                </div>
+            </div>
+        </main>
+      
+    <footer>footer</footer>
     </body>
-    
     </html>
