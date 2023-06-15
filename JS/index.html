@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: blue;
+            font-size: 2rem;
+            text-align: center;
+            background-color: blueviolet;
+        }
+    
+        p {
+            font-size: 3rem;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <h2> THAILAND</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio adipisci consectetur debitis sequi corrupti
+            inventore illum, maxime molestias? Magni odio placeat enim aperiam voluptas. Iure vel aut accusantium, earum
+            odio atque, ea, voluptatibus numquam doloremque dolore laudantium rem maxime ab.</p>
+    
+        <input id="in1" type="text" placeholder="text color">
+        <input id="in2" type="text" placeholder="Backgroud Color">
+        <button onclick="chengcolor()">change Color</button>
+        <script>
+             function chengcolor(){
+                // alert("change Color Funtion...")
+                let tcolor= document.querySelector('#in1').value
+                let bcolor= document.querySelector('#in2').value
+                // alert(tcolor)
+                // alert(bcolor)
+                document.querySelector('h2').style.color = tcolor
+                document.querySelector('h2').style.backgroundColor = bcolor
+             }
+        </script>
+    </body>
+</html>
