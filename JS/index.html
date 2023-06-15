@@ -4,19 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
     <title>Document</title>
-    <style>
-        h2 {
-            color: blue;
-            font-size: 2rem;
-            text-align: center;
-            background-color: blueviolet;
-        }
-    
-        p {
-            font-size: 3rem;
-        }
-    </style>
+   
     </head>
     
     <body>
@@ -28,16 +18,6 @@
         <input id="in1" type="text" placeholder="text color">
         <input id="in2" type="text" placeholder="Backgroud Color">
         <button onclick="chengcolor()">change Color</button>
-        <script>
-             function chengcolor(){
-                // alert("change Color Funtion...")
-                let tcolor= document.querySelector('#in1').value
-                let bcolor= document.querySelector('#in2').value
-                // alert(tcolor)
-                // alert(bcolor)
-                document.querySelector('h2').style.color = tcolor
-                document.querySelector('h2').style.backgroundColor = bcolor
-             }
-        </script>
+        <script src="./index.js"></script>
     </body>
 </html>
