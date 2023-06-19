@@ -10,16 +10,34 @@
     <script>
         let msg=("thailand");
         let age =35
+        const hight=("180");
+        // const คือประกาศค่าตัวแปรที่ไม่สามารถเปลี่ยนแปลงได้
         console.log(msg);
         msg = "meaew";
         console.log(msg);
         console.log(age);
+        console.log(hight);
         console.log(age +5);
         console.log(age+5);
+
+        console.log (typeof msg);
+        // typeof เอาไว้เช๊ค ชนิดตัวแปล
+        alert(`นี่ฉันเอง at ${age}`)
+        // backtic กด alt+96 ` ใช้เพื่อแทรก ตัวแปรลงใน string
         
-        
-        
-        
+        let v = String(age);
+        console.log(v);
+        // let v = String(age); แปลง ตัวเลขเป็น String
+        let z = Number(age+1);
+        console.log(z);
+        // -------แบบฝึกหัด--------------------------------------------------------------
+        let a = 1;
+        let b = 1;
+        let c = ++a;
+        let d = ++b;
+        console.log(a,b,c,d);
+        // ------------!== จะเช๊ก value และประเภทชนิดของข้อมูลด้วย เช่น "1"!==1 ได้ true ความหมาคือ 1 ไม่เท่ากับ string1 = true---------------------
+
     </script>
     
 </body>
