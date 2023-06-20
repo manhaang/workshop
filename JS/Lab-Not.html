@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- --------แบบฝึกหัดข้อที่ 1.9 ข้อ 1----------------- -->
+    <!-- alert(null || 2 || undefined)   //2
+alert(alert(1) || 2 || alert(3));   //1  //2
+alert(alert(1) && alert(2));  //1 //undifined
+alert(1 && null && 2); //null
+alert(null || 2 && 3 || 4);  //3 -->
+<!-- --------------แบบฝึกหัดข้อ2----------------- -->
+<script>
+
+//   let i = Number(prompt('อายุเท่าไหร่'));
+  
+//   if(i>=18 && i<=60  ){
+//              alert('เข้า');
+        
+//          } else{
+
+//             alert("ไม่เข้า");
+//          }
+// --------------------แบบฝึกหัดข้อ3---------------------
+//   let i = Number(prompt('อายุเท่าไหร่'));
+  
+//   if (!(i>=18 && i<=60  )){
+//              alert('เข้า');
+        
+//          } else{
+
+//             alert("ไม่เข้า");
+//          }
+
+// ------------------------แบบฝึกหัดข้อ4---------------------
+
+//if(-1 || 0) alert('first'); // first
+//if(-1 && 0) alert('second');
+//if (null || -1 && 0) alert('third'));
+
+// ------------------------แบบฝึกหัดข้อ5---------------------
+
+let i = prompt('คุณคือใคร');
+if (i =="admin"){
+    let j = prompt('รหัสผ่านคือ...');
+    if (j=="codecamp5"){
+        alert('ยินดีต้อนรับ')
+    }else if(j !=='codecamp5'){
+        alert('รหัสผิด')
+    }else{
+        alert('ยกเลิก')
+    }
+    
+
+}else if(i !=="admin"){
+    alert('ผมไม่รู้จักคุณ');
+
+}else  {
+    alert('ยกเลิก');
+}
+
+</script> 
+
+</body>
+</html>
