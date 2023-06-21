@@ -51,16 +51,20 @@ if (i =="admin"){
         alert('ยินดีต้อนรับ')
     }else if(j !=='codecamp5'){
         alert('รหัสผิด')
-    }else{
+    }else if (j==null){
         alert('ยกเลิก')
+    }else{
+
     }
     
 
 }else if(i !=="admin"){
     alert('ผมไม่รู้จักคุณ');
 
-}else  {
+}else if(i==null) {
     alert('ยกเลิก');
+}else{
+    
 }
 
 </script> 
