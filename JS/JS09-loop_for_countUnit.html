@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+p{
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <p id="p1"></p>
+    <script>
+
+        for (let m = 2; m <=12; m++) {
+            for (let n = 1; n <=12; n++) {
+                document.querySelector('#p1').innerHTML +=(`${m}x ${n}=${m * n}<br>`)
+            }
+            document.querySelector('#p1').innerHTML +="<hr>"
+        }
+
+    </script>
+</body>
+</html>
