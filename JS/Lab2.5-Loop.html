@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1"></p>
+
+    <script>
+
+// แบบฝึกหัด 
+
+
+//1. เลขที่ถูก Alert ลำดับสุดท้ายคืออะไร
+// let i =3;
+// while(i){
+//     alert(i--); //0
+// }
+
+// // 2. code ทั้งสองอันจะแสดง alert เหมือนกันหรือไม่
+// let i=0;
+// while(++i <5) alert(i);  //4
+
+// // 3. code ทั้งสองอันจะแสดง alert เหมือนกันหรือไม่
+// let i=0;
+// while(i++ <5) alert(i);   //5
+
+// for (let i=0;i<5;i++) alert(i); //4
+
+
+// for (let i=0;i<5;++i) alert(i); //4
+
+// // 4. ----------เขียน loop แสดงเลข 2-10 ออกมา loop for 
+// for (let i=0; i<=10; i++){
+//     if(i % 2 === 0) 
+//     document.querySelector('#p1').innerHTML +=(`${i},`);(i);
+// }
+
+
+// //5.----------เขียน loop แสดงเลข 2-10 ออกมา loop While
+// let i =0;
+// while(i<10 ){
+//     i++
+//     if(i % 2 === 0) 
+//     document.querySelector('#p1').innerHTML +=(`${i},`);
+//     // document.querySelector('#p1').innerHTML += (i)
+// }
+
+// 6.เขียนเกมส์ทายตัวเลขเล่น2คน
+
+
+let x = Number(prompt('ตัวเลขคนแรก...0-100'));
+let n = 0//Number(prompt('ตัวเลขคนทาย...0-100'));
+while(n!==x){
+ 
+ n = Number(prompt('ตัวเลขคนทาย...0-100'));
+ 
+if(n>x){
+    alert(`${n}มากกว่าน้อง`);
+   
+}else if(n<x){
+    alert(`${n}น้อยกว่าไอ้น้อง`);
+   
+}else {
+    alert(`${n}okไอ้น้อง`);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
