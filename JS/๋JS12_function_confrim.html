@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+    function checkAge(age) {
+        if (age >= 18) {
+            return true;
+        } else {
+            return confirm('Doyou have permission')
+        }
+    }
+
+    let age = prompt('How old are you?', 18);
+    if (checkAge(age)) {
+        alert('Access granted');
+
+    } else {
+        alert('Access Denind')
+    }
+
+function showMovie(age){
+    if (!checkAge(age)){ //-----if จะทำ return ก็ต่อเมื่อ ประโยคเป็น True เช่น ได้รับค่าจาก checkAge เป็น trueเจอ Not เลยเป็น false เลยข้ามไปทำ alert 
+        return; // แต่ถ้าหาก ได้รับค่าจาก checkAgeเป็น false เจอ Not เลยเป็น True ทำ if เลย Return ออกจาก Function นี้ไป
+    }
+    alert("Showing you the movie");
+}
+
+alert(showMovie(age))
+
+
+
+
+
+
+    </script>
+</body>
+</html>
