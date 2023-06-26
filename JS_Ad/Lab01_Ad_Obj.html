@@ -9,9 +9,29 @@
     <script>
 
 let key = prompt("Enterkey")
+let obj = {};
   while(key!=="stop") {
-    
+    let value = prompt("enter value: ")
+    obj[key] = value;
+    key = prompt("enter key : ");
   }
+  console.log(obj)
+
+//   ---------------------------------------
+let key = prompt("Enterkey")
+let obj = {};
+  while(key!=="stop") {
+    let value = prompt(`enter number value:${key} ` )
+        if (+value>1) {
+            key = key + "s"
+        }
+
+    obj[key] = value;
+    key = prompt("enter fruit name: ")
+}
+  console.log(obj)
+
+
     </script>
 </body>
 </html>
