@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        let sum =function(a,b){
+            return a+b
+        }
+
+        // --------------------จาก function Epresstion แบบเต็ม function arrow  => คือการย่อ function แบบด้านล่าง-----สัญลักษณ์ =>------------
+        let sum2 =(a,b ) => a+b
+            console.log(sum2(6,12))
+
+        // -------------------------------------------------------
+        let evenOdd= function(num){
+    return (num%2===0)? 'true':'false'
+}
+
+console.log(evenOdd(35));
+// -----------------arrow function =>----------------------------
+
+let evenOdd1=(num) =>(num%2===0)? 'true':'false'
+console.log(evenOdd1(48));
+// -----------------------------------------------------------
+
+let sayHi =() =>{
+    alert("hello")
+    console.log('hi')
+    return (null)
+}
+
+// ------------ในกรณีที่มีหลายเงื่อนไข ให้ใส่ปีกกาครอบ หากมี return .ให้ใส่  return ได้เลย
+
+
+    </script>
+</body>
+</html>
