@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+
+        let user = {
+            name: "man",
+            age: 19,
+            address:"Thailand",
+            skill:"JS"
+        }
+            for(let key in user){
+                console.log(key)
+            }
+            // -------------------------------เอา value อกกมาแสดง----------------
+            for (let key in user) {
+                console.log(user[key])
+            }
+
+            //---------------------------------การ Clone และการ Merge Object---------------
+
+
+            let user1 ={
+                name:"manhaang",
+                age:25,
+                skill:"Golang"
+            }
+
+            let admin ={};
+            for(let key in user1){
+               admin[key]=user1[key] 
+            }
+
+            // -----------------------------Object assing()-------------------------------------------------
+
+
+
+    </script>
+</body>
+</html>
