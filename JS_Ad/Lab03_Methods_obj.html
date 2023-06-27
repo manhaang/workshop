@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+
+// ------------------------------1.-------------------------
+let user = {
+  name: "John",
+  go: function() { alert(this.name) }
+};
+
+(user.go)()
+// ------------------------------2.--------------------------
+
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+};
+
+let user = makeUser();
+
+alert( user.ref.name ); // What's the result?
+
+// ---------------------------------3.-------------------------
+
+    let calculator = {
+        read() {
+            this.nam1 = number(prompt('enter num'));
+            this.nam2 = number(prompt('enter num'));
+        },
+        mul() {
+
+            return this.num1 * this.num2
+        },
+        sum() {
+
+            return this.num1 + this.num2
+        }
+    };
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+// ------------------------------------4.--------------------------
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep: function() { // shows the current step
+    alert( this.step );
+  }
+};
+
+
+
+ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); 
+
+
+    </script>
+</body>
+</html>

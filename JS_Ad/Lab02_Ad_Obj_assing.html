@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+// ---------------------------------ขอ้อหนึ่ง--------------------------- 
+ let user0 = {
+        name: "manhaang",
+        age: 25,
+        skill: "Golang"
+    }
+    user0.name ="boy"
+    delete user0.name
+// ----------------------------------ข้อสอง-----------------------------
+    function isEmpty(obj){
+        for(let key in obj){
+            return false
+        }
+        return true
+
+    }
+// ---------------------------------ข้อสาม----------------------------
+const user = {
+    name: "john"
+};
+
+user.name = "Peter"
+// -----------------------------------ข้อมสี่-----------------------------
+ function sum(obj){
+    let totalSalaries =0;
+    for(let key in obj){
+        totalSalaries += obj[key];
+    }
+return totalSalaries;
+ }
+
+let Salaries ={
+    jhon:15000,
+    man:30000,
+    au:40000
+
+}
+
+sum(Salaries)
+// -----------------------------------------ข้อห้า---------------------
+
+function multiplyNumeric(obj,times){
+    for(let key in obj){
+        if(typeof obj[key] !== "number" ) continue
+        obj[key]*=times
+    }
+}
+let menu = {
+    widht:200,
+    height:300,
+    title:800
+}
+
+multiplyNumeric(obj,5)
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
