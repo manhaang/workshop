@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // --------------------ข้อ1
+        function ucFirst() {
+                let str = prompt('Enter text')
+                let str2 = str.charAt(0).toUpperCase() + str.slice(1);
+                console.log(str2);
+                ucFirst()
+            }
+            // ---------------------------ข้อ2---------
+
+            function checkSpam(){
+                let str = prompt()
+                if(str=="xxx" || str=="viagra"){
+                    return true
+                }   else {
+                    return false
+                }       
+            
+            
+            }
+            //--------------------------------ข้อ3--------------
+
+            function truncate(str,maxlength){
+                    if (str.length>=maxlength){
+                       
+                        
+                    }console.log(str.slice(0, 19)+'...')
+                    
+            }
+            // --------------------------------ข้อ4--------------
+            
+            function extractCurrency(String,rate){
+                let  n=(Number(String.slice(1))*rate)   
+                
+                console.log(n)
+                alert(` extractCurrency($${String},30.5)+===${n}`)    
+            }
+
+          
+
+
+
+
+
+    </script>
+</body>
+</html>

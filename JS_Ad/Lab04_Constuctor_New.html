@@ -28,9 +28,18 @@
 
 let calculator = new Calculator();
 
+// ------------------------------2.-------------------------
+        function Accumulator(startingValue){
+            this.value = startingValue;
+            this.read = function(){
+                    let temp = prompt("Enter Nmum");
+                    this.value += +(temp);
 
+            }      
+        }
 
-
+        let accumulator = new Accumulator(20);
+        accumulator.read();
 
     </script>
 </body>
