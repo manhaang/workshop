@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+            let fruits =["Apple","Orange","Pear"];
+             let a = fruits.push('manggo') // คือการเพิ่มค่าต่อท้ายแถว
+            let b = fruits.shift() // คือการลบค่าตัวหน้าออก จะเหลือ Orange,Pear มองเป็นการต่อแถว
+            let c = fruits.unshift("papaya") // คือการแทรกตัวหน้า  มองเป็นการต่อแถว
+            let d = fruits.pop() // คือการเอาค่าตัวที่เพิ่มเข้าล่าสุดออก Orange,Pear มองเป็นจานแนวตั้ง
+// ----------------------------------------------------------------------------------------------------
+// --------------------------Loop for of แสดง Valueทีอยู่ใน Array------------
+        for (let e of fruits){
+            e=e.toUpperCase()
+            alert(e)
+        }
+// ------------------------Loop for in แสดง key ของ obj------------------------------------
+
+        let f = [{ pname:'tangmo',Price:65},
+                 { pname:'Makharm',Price:100},
+                 { pname:'lamon',Price:20},
+                 { pname:'banana',Price:25},
+                 ]
+    
+      for (let g in f){
+        
+            alert(f[g])
+        }
+    
+    </script>
+</body>
+</html>
