@@ -12,19 +12,38 @@
 
 
     <script>
-        let styles = ['jass','blues']
-        styles.push('Rock-n-Roll')
-
-        const fruits = ["Apple", "Banana", "Strawberry"];
-const start = -2;
-const deleteCount = 2;
-const removedItems = fruits.splice(start, deleteCount, "Mango", "Cherry");
-console.log(fruits);
-// ["Apple", "Mango", "Cherry"]
-console.log(removedItems);
-// ["Banana", "Strawberry"]
+// ---------------------------ข้้อ1-------------------------
+        // let fruits =["Apple","Pear","Orange"];
+        // let shopingCart = fruits;
+        // shopingCart.push("Bannana");
+        // console.log(fruits.length)
 
 
+// --------------------------ข้อ2-----------------------------------
+//         let styles = ['jass','blues']
+//         styles.push('Rock-n-Roll')
+//         let removedItems = styles.splice(1, 1, "Classsic");
+//         let b = styles.shift()
+//         let c = styles.unshift('Rap','Reggae')
+// console.log(styles);
+
+// --------------------------ข้อ3--------------------------------
+
+    function suminput() {
+
+            let b = []
+            let a = 1
+            
+            while (a !== NaN) {
+                            
+                a = +(prompt('number'))
+                b+=a
+               
+                console.log(b)
+            }
+        
+        }
+        suminput()
     </script>
 </body>
-</html>
+</html> 
