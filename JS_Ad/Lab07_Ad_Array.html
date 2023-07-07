@@ -29,27 +29,30 @@
 
 // --------------------------ข้อ3--------------------------------
 
+
     function suminput() {
 
-            let b = []
-            let a = 1
+        let b = []
+        let a = 0
+       
+        while (a =!isNaN(parseFloat(a))) {
+           
+            a = Number(prompt('number'))
+             
+            let add = b.push(a)
+            console.log(b)
 
-            while (a !== String) {
-
-                a = +(prompt('number'))
-                let add = b.push(a)
-                console.log(b)
-                
-                let tatal=0
-            for (let i=0;i<b.length;i++){
-                 tatal+=b[i];
-                       console.log(tatal)
+            let tatal = 0
+            for (let i of b) {
+                tatal += i;
+                console.log(tatal)
 
             }
-            }
-            
         }
-        suminput()
+        return false;
+        
+    }
+     suminput()
     </script>
 </body>
 </html> 
