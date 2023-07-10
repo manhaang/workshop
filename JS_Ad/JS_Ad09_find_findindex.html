@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+   
+   
+   
+   
+   
+   
+   <script>
+        let users=[
+            { id:1,name:"man"},
+            { id:2,name:"mia"},
+            { id:3,name:"janr"},
+        ];
+// ---------------เขียนแบบ Arrow function การค้นหาใน array-----------
+
+        let user = users.find(item=> item.id==1);
+
+// ------------------หากเขียนแบบเต็ม---------------
+
+    let u = users.find(function(x){
+        return (x===1)
+    })
+// -----------------ค้นหาค่า index สิง่ที่ต่างกันคือ ค่าReturn  ------------------------------
+
+let u1 = users.findIndex(function(x){
+        return (x===1)
+    })
+    // -------------------------------
+    </script>
+</body>
+</html>

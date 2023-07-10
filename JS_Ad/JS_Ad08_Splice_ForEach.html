@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ------------------splice ทำได้ทั้งลบและเพิ่ม----------------
+        fuits = ["apple","grap","papaya","manggo"]
+        fuits.splice(1,2,"Orenge")//คือการลบ "grap","papaya"ออก และเพิ่ม "Orenge"ไปแทน
+        fuits.splice(1,0,"Lamon")//คือการเพิ่มโดยไม่ลบ
+        //  ['apple', 'Lamon', 'Orenge', 'manggo']
+        // --------------------Slice คือการเอาค่าออกมาแต่ไม่ลบArray ต้นทาง และจะไมนับตัวสุดท้ายของ index--------------
+        fuits.slice(2,4)//---"Orenge","manggo"------
+
+        // -------------------concatคือการ บวกกัน------------------------------
+        fuits1 = ["gggg","eeeee"]
+        fuits.concat("eye","ear")//  ['apple', 'Lamon', 'Orenge', 'manggo']
+        fuits.concat(fuits1)//['apple', 'Lamon', 'Orenge', 'manggo','gggg','eeeee']
+
+        // ------------------ForEach---คล้ายกับ For of แต่มี Propertiesที่เยอะกว่า มีลูกเล่นเยอะกว่า--
+        //-------------------รูปแบบการใช้ arr.forEach(function(item,index,array){});
+        fuits.forEach(function(x) {
+           console.log(`value:${x}`) 
+        });//----------------------80%จะใช้แบบนี้ ---------------
+        fuits.forEach(function(x,i) {
+           console.log(`index:${i}value:${x}`) 
+        });
+    </script>
+</body>
+</html>
