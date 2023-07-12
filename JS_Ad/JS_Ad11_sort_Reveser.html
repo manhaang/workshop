@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script>
+        // ----------คือการค้นหาใน Array แต่ Defalse จะแปลงเป็น String ทั้งหมด 
+        let arr=[7,8,9,10,1,2,5,4]
+        console.log(arr)
+        // -----------รูปแแบการใช้งาน sort จากน้อยไปมาก -------------------------------
+       function compare(a,b){
+        if (a>b) return 1;
+        if (a==b) return 0;
+        if (a<b) return -1;
+       }
+        arr.sort(compare)
+        // ----------จัดในรูปแบบ Ternary จากน้อยไปมาก-------------------------------------
+        function cpNum(a,b){
+            return (a>b)?1 : (a<b)? -1 : 0
+        }
+        // ---------------หรือสามารถ เขียนให้สั้นกว่านนี้ได้ดังนี้ และยังได้ผลเหมือนเดิม------------
+        function cpNum(a,b){
+            return a-b
+        }
+        // ---------------หรือสามารถ เขียนให้สั้นกว่านนี้ได้อีกดังนี้ และยังได้ผลเหมือนเดิม------------
+        arr.sort(function(a,b){return b-a});
+
+        //-----------------arrow sunction  1.ลบคำว่าfunction ทิ้ง 2.ใส่=>หลัง paramitter 3. ลบปีกกาและ Returnออก---------
+        arr.sort((a,b)=>b-a);
+        
+        //------ตัวอย่าง Compaer หาค่าสัมบรูณโดยไม่สนเครื่องหมายลบ จากน้อยไปมาก '-'------------------------
+
+        let nm = [5,7,-4,-2,9,-8,10,8]
+        function cpNumAbs(a,b){
+            let aa = Math.abs(a)
+            let bb = Math.abs(b)
+            return (aa>bb)?1 : (aa<bb)? -1 : 0
+        }
+        // ------------------sort leสำหรับภาษาไทย---------------------------------------------------
+        let thw = ["เด็ก","สดม","เสมา","ไก่",]
+        function cpThw(a,b){
+            return a.localeCompare(b)
+        }
+        //------- ternary--------
+        thw.sort((a,b) =>a.localeCompare(b));
+
+        
+        
+        // ----------Revesrคือการกลับจากท้ายไปหน้า -------------------------
+        let thw1 = ["เด็ก","สดม","เสมา","ไก่",]
+        thw1.reverse();
+
+        console.log(nm1);
+
+        thw1.sort((a,b)=>a.localeCompare(b)).reverse()
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // ------------filter คือการหาค่าใน array เอามาแสดงทั้งหมด-----------------
+        let users = [
+            { id: 1, name: "man" },
+            { id: 2, name: "mia" },
+            { id: 3, name: "janr" },
+        ];
+
+        let  n =users.filter(x=>x.id<3); 
+        
+        
+        // -------------------------- Map คือการเปลี่ยนค่าใน Array-----------------
+        // แบบเก่าหากใช้ forEach
+        let fuits = ["apple","grap","papaya","manggo"]
+        let m =[]
+        fuits.forEach((x,i) => m[i]=x.length)
+        // หากเป็น map-------------------------------
+        m = fuits.map(x =>  x.length)
+
+    
+
+    </script>
+</body>
+</html>
