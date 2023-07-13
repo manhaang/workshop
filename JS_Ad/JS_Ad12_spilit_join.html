@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        // ------------------split คือการแปลงค่า String เป็น Array----------------
+        let name ="Bilbo,Gandaft,Nazgul,Saruman"
+        let arr = name.split(",")
+
+        let rs =arr.map(x => `To${x.toLowerCase()}`) //เใมื่อเป็น Arr แล้วสามารถใช้งาน Method ได้เหมือน Array
+        // --------------------------------------------------------------------
+
+        rs.join("-") // join คือการแปลงจาก Array เป็น String ----------
+
+
+    </script>
+</body>
+</html>
