@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+
+
+
+
+
+
+let m = new Map([
+        [1,"man"],
+        [2,"new"],
+        [3,"Mike"]
+
+       ] )   
+       for (let k of    m.keys())
+            console.log(k)//---------จะแสดงค่า Key ใน Map ออกมา----------------------
+       for (let v of m.values())
+            console.log(m)//---------จะแสดงค่า Value ใน Map ออกมา----------------------
+       for (let v of m.entries())
+            console.log(m)//---------จะแสดงค่า keyและ Value ใน Map ออกมาในรูปแบบ Array----------------------
+
+            // -------------------------หลักการของ Setก็จะเกมือนกันกับ Map-------------------------
+
+
+
+// -----------------------------------------------ในส่วนของ Obj จะ Return ค่า Key เป็น Array----
+        let user = {
+            name:'man',
+            age:24,
+            school:'chaingkhong'
+
+        }
+        Object.keys(user).forEach(k => console.log(k))//จะแสดงค่า Key ใน Obj ออกมา
+        Object. values(user).forEach(k => console.log(k))//จะแสดงค่า Value ใน Obj ออกมา
+        Object. entries(user).forEach(k => console.log(k))//จะแสดงค่า key,Value ใน Obj ออกมา
+
+        let mu = new Map(Object.entries(user)) //แปลงค่าใน Obj ให้กลายเป็น Map ได้เลยเพราะ Entriesได้ทั้ง Key และ Values
+
+
+// ---------------------------------------กรณีนำไปใช้งาน-cแสดงส่วนลด10%-------------------------------------
+
+
+let prince ={
+    A:100,
+    B:200,
+    C:300
+}
+
+let op = prince.Object.entries(prince)
+let rsop = op.map(([k,v])=>[k,v*0.9])
+let reprice = Object.entries(rsop)
+
+// -------------------------เมื่อเขียนให้ย่อลงกว่าเดิม-------------------------
+
+Object.entries(prince).map(([k,v]) => [k,v*0.9])//iterable ค่า k และ v โดยให้ V*0.9  
+
+Object.fromEntries( Object.entries(prince).map(([k,v]) => [k,v*0.9]))//จากนั้นแปลงเป็นค่าObject อีกครั้ง
+
+let deprice = Object.fromEntries( Object.entries(prince).map(([k,v]) => [k,v*0.9]))// นำ Object ที่ได้เก็บใส่ตัวแปลและนำไปทำอย่างอื่นต่อได้
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

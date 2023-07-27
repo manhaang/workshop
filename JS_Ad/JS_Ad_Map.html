@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <script>
+//----------Map จะเหมือนกับ Object ทุกประการแต่จะทำงานได้เร็วกว่า Oject---------------
+let m_user = new Map(
+        [ ['name','man']
+          ['age',25]
+          ['gender','male']
+          ['from','bkk']
+       ]
+)
+    //    ------------m.set คือการเพิ่มค่า--------------------------------------------
+        let m = new Map()
+        m.set('name','haha')
+        m.set('age',30).set('from','changrai').set('dender','male')
+
+        // --------------get คือการดึงค่ามาแสดง แต่จะต้องจาก key-------------
+        m.get('age')
+        // ---------------has เช็คค่า key ว่ามรอยู่หรือไม่ return true or falas----------------
+        m.has('age')
+        // ------------------delet -----ลบค่าใน Map----------------------
+        m.delect('gender')
+        // ---------------------clear เคลียร์พื้นที่ใน Mapให้มีพื้นที่ว่าง-------------------------
+        m.clear()
+        // ----------------------size-คือการนับค่าที่อยู่ใน Map---------------
+        m.size
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

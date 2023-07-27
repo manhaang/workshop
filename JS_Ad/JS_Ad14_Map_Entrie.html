@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ---------------------คือการแปลง Object เป็น Array ของ Key-value ด้วย Object.entries-------------------
+             let user =
+                {
+                    name: 'jhon',
+                    age: 25,
+                    gender: 'male',
+                    from: 'bkk'
+                }
+
+    let om = new Map(Object.entries(user))
+
+
+console.log(om[0][1])
+
+// -------------------------การแปลงกลับคือเอา Map แปลงเป็น Obj โดยใช้ Object.fromEntries----------
+
+let user_ex = Object.fromEntries(om)
+
+
+
+
+
+    </script>
+</body>
+</html>

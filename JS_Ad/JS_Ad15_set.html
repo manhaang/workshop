@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // -------------------set คือ ข้อมูลที่จัดไว้อยูในset จะมีเฉพาะค่า value เท่านั้น-  จะไม่เก็บค่าซ้ำ-----------------
+
+        let s = new Set([ 1,2,3,4,5,6,7,8,9,"A" ]);
+
+        s.add("B")// คือการ add value เพิ่ม
+        s.forEach(v=>Console.console.log(v))//-----สามารถ iterad ได้เหมือ array---
+        s.delete("A")//------คือการลบ ----value
+        s.clear//คือการเคลัยร์ทั้งหมด
+        s.has("B")//--------สอบว่ามีค่าใน set ไหม
+
+
+        let arr = [1,1,2,2,3,3,4,4,5,5,6,6]
+        s = new Set(arr)// d------------กำจัดค่าที่ซ้ำกันออกไปทั้งหมด----------------------------------
+
+
+        let as = Array.from(s) // การแปลงค่าให้กลับไปเป็น Array-------------------------- 
+
+        for (let v of s.vlues())
+            console.log(v)  //------------แสดงค่า Value ออกมา-----------------
+        
+        
+        
+            for (let j of s.entries())
+            console.log(v)  //------------แสดงค่า Value ออกมาใรูปแบบของ Map [Values,Values]-----------------
+
+        s = new Map(s.entries)//-----------เปลี่ยนค่า Set ให้เป็น Map-----------
+        s.Set(1,"ABC")
+
+       // -------------------------------------------------------------------------------------------------------------------------
+       let m = new Map([
+        [1,"man"],
+        [2,"new"],
+        [3,"Mike"]
+
+       ] )   
+       for (let k of    m.keys())
+            console.log(k)//---------จะแสดงค่า Key ใน Map ออกมา----------------------
+       for (let v of m.values())
+            console.log(m)//---------จะแสดงค่า Value ใน Map ออกมา----------------------
+       for (let v of m.entries())
+            console.log(m)//---------จะแสดงค่า keyและ Value ใน Map ออกมาในรูปแบบ Array----------------------
+
+            // -------------------------หลักการของ Setก็จะเกมือนกันกับ Map-------------------------
+
+    </script>
+</body>
+</html>
