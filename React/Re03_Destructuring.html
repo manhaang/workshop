@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+    <script>
+//Destructuring จะช่วยให้สามารถเอาสมาชิกที่อยู่ใน array หรือ object ออกมาให้อยู่ในตัวแปรได้
+// เรามี array ที่ข้างในประกอบไปด้วย name และ surname
+let arr = ["Ilya", "Kantor"];
+
+// destructuring assignment
+// กำหนด firstName = arr[0]
+// และ surname = arr[1]
+let [firstName, surname] = arr;
+
+alert(firstName); // Ilya
+alert(surname);  // Kantor
+
+
+// ---------------------------วิธีใช้ Rest Pattern---------------
+let options = {
+    title: "Menu",
+    height: 200,
+    width: 100
+};
+
+// title = property ชื่อ title
+// rest = object ที่เก็บ properties ที่เหลือไว้
+let { title, ...rest } = options;
+
+// title="Menu", rest={height: 200, width: 100}
+alert(rest.height);  // 200
+alert(rest.width);   // 100
+
+// -----------Nested Destructuring- คือดึง Value ที่อยู่ลึกลงไปออกมาแสดง-------------------------------------------------
+let options = {
+    size: {
+        width: 100,
+        height: 200
+    },
+    items: ["Cake", "Donut"],
+    extra: true
+};
+// destructuring assignment split in multiple lines for clarity
+let {size: { // put size here
+        width,
+        height
+    },
+    items: [item1, item2], // assign items here
+    title = "Menu" // not present in the object (default value is used)
+} = options;
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200
+alert(item1);  // Cake
+alert(item2);  // Donut
+
+
+
+    </script>
+</body>
+</html>

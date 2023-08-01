@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+    // export คีย์เวิร์ดใช้เมื่อต้องการให้ ตัวแปร หรือ ฟังก์ชันนี้สามารถใช้นอก Module นี้ได้
+
+    import{sayHi} from'./sayHi.js'
+
+    alert(sayHi);//function...
+    sayHi('John');
+
+
+
+
+    //import คีย์เวิร์ดใช้เมื่อต้องการนำ ตัวแปรหรือฟังก์ชันจาก Module อื่นมาใช้
+
+
+export function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
+
+
+
+
+//สิ่งที่ต้อง Import ใน Module นั้นมีเยอะเหลือเกินเราสามารถ import ทุกอย่างใน Module ให้อยู่ในรูปของ Object ได้ โดยใช้ import * as <obj>
+import * as say from './say.js';
+
+say.sayHi('John');
+say.sayBye('John');
+
+
+
+//หลักการตั้งชื่อของ default export ก็คือตั้งให้เหมือนชื่อไฟล์
+
+import User from './user.js';
+import LoginForm from './loginForm.js';
+import func from '/path/to/func.js';
+...
+
+</script>
+
+
+</body>
+</html>

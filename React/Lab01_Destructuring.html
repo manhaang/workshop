@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// -------1------------------
+let user = {
+    name: "John",
+    years: 30
+};
+
+let{name,years,age,isAdmin=false} =user
+
+// ----------2.--------------------
+let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+};
+
+function topSalary(salaries){
+    let mostsalary = 0;
+    let whoMostSalary = null;
+    for(name in salaries){
+        if(salaries[name] > mostsalary){
+        
+        mostsalary = salaries[name]
+        whoMostSalary = name
+        }
+
+
+    }
+
+    return whoMostSalary
+
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>

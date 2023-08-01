@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+
+        
+// Rest Operator 
+// Rest Operator คือ ส่วนเกินที่เหลือที่ไม่ถูกนำไปใช้งาน จะถูกเก็บเอาไว้ในรูปแบบของ Array โดย การประกาศ Functionจะใช้ จุดสามจุด … ตามด้วยชื่อของ array 
+
+
+function sumAll(...args) { // args คือชื่อของ array ที่เก็บ Parameters ไว้
+    let sum = 0;
+
+    for (let arg of args) sum += arg;
+
+    return sum;
+}
+
+alert(sumAll(1)); // 1
+alert(sumAll(1, 2)); // 3
+alert(sumAll(1, 2, 3)); // 6
+
+//----------------วิธีประยุกต์ใช้งาน RestOperator--------------------------
+//----------------------RestOperator ต้องอยู่ข้างหลังเสมอ------
+
+function sum (a,b,...array)
+let standardValue = a+b;
+
+for(let i of arr ) standardValue += i
+
+return standardValue
+
+// -------------------วิธีประยุกต์ใช้งาน RestOperator---------------------
+function showName(firstName, lastName, ...titles) {
+    alert(firstName + ' ' + lastName); // Julius Caesar
+
+    // ที่เหลือ (the rest) กลายเป็น array ชื่อ titles
+    // เช่น titles = ["Consul", "Imperator"]
+    alert(titles[0]); // Consul
+    alert(titles[1]); // Imperator
+    alert(titles.length); // 2
+}
+
+
+// ---------------------------Spread Operator ตรงข้ามกับ Rest Operator---------------------
+// ---------------------------Spread Operator คือการแตก Rest Opertor ให้อยู่ในรูปแบบของ Valueเป็น list เพื่อพร้อมที่จะใช้งาน--------------------------------
+
+let arr = [3, 5, 1];
+
+alert(Math.max(...arr)); // หากใส่ arr ไปตรงๆจะได้ค่า Nan เพราะเมททอธ จะไม่รู้จัก Array จะรู้จักเฉพาะ Value
+
+// ----------สามารถทำการ Merge Arrar ได้----------------------
+let arr = [3, 5, 1];
+let arr2 = [8, 9, 15];
+
+let merged = [0, ...arr, 2, ...arr2];
+// merged = [0, 3, 5, 1, 2, 8, 9, 15];
+
+alert(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
+
+// ---------------------การ copy ใน SpreadOperator จะไม่ทำให้ค่า Referrence ต้นทางเปลี่ยนแปลง----------
+let arr = [1, 2, 3];
+let arrCopy = [...arr]; 
+
+
+// arrays ทั้งสองมีเนื้อหาที่เหมือนกันไหม?
+alert(JSON.stringify(arr) === JSON.stringify(arrCopy)); // true
+
+// arrays ทั้งสองเท่ากันไหม?
+alert(arr === arrCopy); // false (reference ไม่เหมือนกัน)
+
+// แก้ไข array แรก, แต่ไม่แก้ไขตัวที่ copy ขึ้นมา:
+arr.push(4);
+alert(arr); // 1, 2, 3, 4
+alert(arrCopy); // 1, 2, 3
+// --------------------------------------การ Copy No Referrece Object--------------------
+
+let obj = { a: 1, b: 2, c: 3 };
+let objCopy = { ...obj }; // spread object ให้กลายเป็น list ของ parameters
+// แล้วก็ return ผลลัพธ์เข้าไปใน object ใหม่
+
+// objects ทั้งสองอันมีเนื้อหาที่เหมือนกันไหม ?
+alert(JSON.stringify(obj) === JSON.stringify(objCopy)); // true
+
+// objects ทั้งสองเท่ากันไหม ?
+alert(obj === objCopy); // false (reference ไม่เหมือนกัน)
+
+// ลองเปลี่ยนบางอย่างใน object แรก, แต่ไม่เปลี่ยนใน object ที่ copy มา:
+// เพื่อให้เห็นว่าเป็นการ copy by value
+obj.d = 4;
+alert(JSON.stringify(obj)); // {"a":1,"b":2,"c":3,"d":4}
+alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}
+
+
+    </script>
+</body>
+</html>
