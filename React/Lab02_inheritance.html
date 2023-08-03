@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// -------------------------1.----------------------
+let animal = {
+  jumps: null
+};
+
+let rabbit = {
+  __proto__: animal,
+  jumps: true
+};
+
+alert( rabbit.jumps ); // True (1)
+
+delete rabbit.jumps;
+
+alert( rabbit.jumps ); // null (2)
+
+delete animal.jumps;
+
+alert( rabbit.jumps ); // Undifide (3)
+// ---------------------------2.-----------------------------------
+
+let pockets = {
+  money: 2000
+};
+
+let bed = {
+  sheet: 1,
+  pillow: 2,
+   __proto__ :pockets
+};
+let table = {
+  pen: 3,
+  __proto__:bed
+};
+let head = {
+  glasses: 1,
+  __proto__:table
+};
+// -----------------------3.-การเขียนโค๊ดแบบนี้ object ไหนจะเป็นคนได้ property full ไป -----------------------------------
+
+let animal = {
+  eat() {
+    this.full = true;
+  }
+};
+
+let rabbit = {
+  __proto__: animal
+};
+
+rabbit.eat();
+
+// ตอบ rabbit
+
+// ------------------------4.-----------------------------------------------------------
+
+let hamster = {
+  stomach: [],
+
+  eat(food) {
+    if(!this.stomach) this.stomach =[] //วิธีการแก้ปัญหาคือให้สร้างกระเพราะของตัวเองขึ้นมาหากไม่มี
+    this.stomach.push(food);
+  }
+};
+
+//-------เรียกใช้ Prototype--
+let speedy = {
+  __proto__: hamster
+};
+
+let lazy = {
+  __proto__: hamster
+};
+
+// This one found the food
+speedy.eat("apple");
+alert( speedy.stomach ); // apple
+
+// This one also has it, why? fix please.
+alert( lazy.stomach ); // apple
+// -----------------------------------------------------------------------
+
+
+
+    </script>
+</body>
+</html>

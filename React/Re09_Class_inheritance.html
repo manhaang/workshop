@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*
+class MyClass {
+  // class methods
+  constructor() { ... }
+  
+  method1() { ... }
+  method2() { ... }
+  method3() { ... }
+  ...
+}
+*/
+
+
+// --------------Excample--------------
+//-------------Class Constructor จะต้องใช้กับ new เท่านั้น--------------------------
+
+class User {
+
+constructor(name) {
+  this.name = name;
+}
+
+sayHi() {
+  alert(this.name);
+}
+
+}
+
+// -------------------การถ่ายทอด (Inheritance)--------------------------------
+
+class Animal {
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+  run(speed) {
+    this.speed = speed;
+    alert(`${this.name} runs with speed ${this.speed}.`);
+  }
+  stop() {
+    this.speed = 0;
+    alert(`${this.name} stands still.`);
+  }
+}
+
+let animal = new Animal("My animal");
+
+// --------------หาก class ต้องการใช้ Perproties ของ Animal จะใช้โดยการ extends---------------
+// --------------วิธีใช้ extends: class Child extends Parent--------------------------------
+
+class Rabbit extends Animal {
+  hide() {
+    alert(`${this.name} hides!`);
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit");
+
+rabbit.run(5); // White Rabbit runs with speed 5.
+rabbit.hide(); // White Rabbit hides!
+
+// --------------------"super" Keyword จะให้เราสามารถเข้าถึงตัว Parents Class มันได้---------------
+class Rabbit extends Animal {
+  hide() {
+    alert(`${this.name} hides!`);
+  }
+
+  stop() {
+    super.stop(); // call parent stop
+    this.hide(); // and then hide
+  }
+}
+
+let rabbit1 = new Rabbit("White Rabbit");
+
+rabbit.run(5); // White Rabbit runs with speed 5.
+rabbit.stop(); // White Rabbit stands still. White rabbit hides!
+
+// -------------เวลาจะเขียน Constructor เป็นของตัวเองต้องเรียก super() เสมอ
+
+class Rabbit extends Animal {
+  constructor(...args) {
+    super(...args);
+  }
+}
+
+
+    </script>
+</body>
+</html>

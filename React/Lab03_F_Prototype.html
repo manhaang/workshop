@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+// --------------------1.----------------------------------
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+Rabbit.prototype = {};
+
+alert( rabbit.eats ); // ?
+
+//ตอบ True เวลาเรียก Fnใหม่ Fn ใหม่จะถูก โอนถ่าย Prototype มาที่ตัวใหม่ด้วย
+//------------------------2.-----------------------------------
+
+
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+Rabbit.prototype.eats = false;
+
+alert( rabbit.eats ); // ?
+//ตอบได้ falus  เพราะกำหนดค่า prototype.eats = false;
+
+// --------------------------3.--------------------------------
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+delete rabbit.eats;
+
+alert( rabbit.eats ); // ?
+// ตอบ ได้ True เพราะ จะไปดึงมาจาก Prototype Rabbit ตัวเดิม
+
+// --------------------------4.----------------------------------
+
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+delete Rabbit.prototype.eats;
+
+alert( rabbit.eats ); // ?
+//ตอบ ได้ Undifide เพราะถูกลบไปแล้ว
+
+
+//--------------------------------5.ถ้าเราต้องการสร้างใช้ constructor ของ obj เราสามารถเขียนแบบนี้ได้ไหม---------------------------------
+let obj2 = new obj.constructor();
+
+// ตอบสามารถทำได้ Prototype ยังคงตามยัง obj2
+
+    </script>
+</body>
+</html>

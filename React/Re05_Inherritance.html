@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    
+    <script>
+        // -----------------------inheritance คือการอ้างอิง Perproties ไปยัง Object อื่นๆ----------------
+
+            let animal = {
+                eats: true
+            };
+            let rabbit = {
+                jumps: true
+            };
+
+            rabbit.__proto__ = animal;
+            // -----------------------inheritance ลำดับชั้นล่างสุดสามารถเรียกไปข้างบนได้ แต่ข้างบนจะไม่สามารถเรียกไปยังตัวที่ต่ำกว่าได้---------------------------------------------------------
+
+            let animal = {
+                    eats: true,
+                    walk() {
+                        alert("Animal walk");
+                    }
+                };
+
+                let rabbit = {
+                    jumps: true,
+                    __proto__: animal
+                };
+
+                let longEar = {
+                    earLength: 10,
+                    __proto__: rabbit
+                };
+
+                // walk เอามาจาก prototype chain
+                longEar.walk(); // Animal walk
+                alert(longEar.jumps); // true (จาก rabbit)
+
+                // --------------------------------ห้ามเป็นการอ้างอิงแบบวนกลับมาหาตัวเอง ไม่งั้นจะ Error----------------------------------
+                //---------------------------------__proto__ เป็นได้แค่ object และ null เท่านั้น ไม่สามารถเป็น type อื่นได้--------------
+                //---------------------------------this ใน function จะหมายถึง object ที่อยู่หน้าจุด----------------------------------
+                // animal มี methods
+    let animal1 = {
+            walk() {
+                if (!this.isSleeping) {
+                    alert(`I walk`);
+                }
+            },
+            sleep() {
+                this.isSleeping = true;
+            }
+        };
+    let rabbit = {
+            name: "White Rabbit",
+            __proto__: animal
+        };
+
+        // ปรับเปลี่ยน rabbit.isSleeping
+        rabbit.sleep();
+
+        alert(rabbit.isSleeping); // true
+        alert(animal.isSleeping); // undefined (ไม่มี property ใน prototype)
+
+
+
+    </script>
+</body>
+</html>
