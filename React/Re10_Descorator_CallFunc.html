@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+// ----------------ลักษณะของ Decorator คือเหมือนเป็นการ Wrap Funtion เอาไว้เพิ่อเปลี่ยนแปลงหรือแก้ไข---------------
+// ----------------โดยปกติจะใช้เพื่อการ ทำแคช------โดยจะใช้ new Map เพื่อเก็บ Array-----------------------------
+// ------------ตัวอย่างการใช้งาน caching----------
+// ----------1----------
+function slow(x) {
+  // สมมติว่าฟังก์ชันนี้มีการใช้ CPU ในการคำนวณอย่างหนัก
+  alert(`Called with ${x}`);
+  return x;
+}
+// -----------2----------
+function cachingDecorator(func) {
+  let cache = new Map();
+
+  return function(x) {
+    if (cache.has(x)) {    // ถ้ามี key อยู่ใน cache
+      return cache.get(x); // ก็เอาค่าออกมาใช้เลย
+    }
+
+    let result = func(x);  // หรือไม่ก็เรียก func ใหม่
+
+    cache.set(x, result);  // และทำการ cache (remember) ผลลัพธ์ไว้
+    return result;
+  };
+}
+// ------------3-------------
+slow = cachingDecorator(slow);
+
+alert(slow(1)); // slow(1) ถูก cached เรียบร้อย
+alert("Again: " + slow(1)); // ผลลัพธ์เหมือนเดิม
+
+alert(slow(2)); // slow(2) is ถูก cached เรียบร้อย
+alert("Again: " + slow(2)); // ผลลัพธ์เหมือนเดิม
+
+//หลักการคือเราสามารถเรียก cachingDecorator สำหรับฟังก์ชันหนึ่งและคืนค่ากลับมาเป็น caching wrapper
+
+
+
+
+
+
+
+
+// --------------------------call-------------------------------------
+//----------------cachingDecorator จากหัวข้อที่แล้วจะไม่สามารถใช้งานกับ methods ใน object ได้-call จึงมาแก้ปัญหานนี้------------
+
+
+let worker = {
+  someMethod() {
+    return 1;
+  },
+
+  slow(x) {
+    // ฟังก์ชันที่ทำให้ CPU จะทำงานหนัก
+    alert("Called with " + x);
+    return x * this.someMethod(); // (*)
+  }
+};
+
+// ----------------------
+/*แยกกรณีมาทดสอบ
+เมื่อลองนำ code ทางขวามารัน
+จะพบว่าปัญหา เกิดจาก this จริงๆ
+this ไม่ได้ชี้ไปที่ worker
+แต่ this ชี้ไปที่ global object  แทน(this จะชี้ไปที่ global object จะเกิดขึ้นในกรณีที่ this หา object ไม่เจอ)
+ซึ่งทำให้ไม่พบ someMehod ที่อยู่ใน worker
+*/
+
+
+function cachingDecorator(func) {
+    let cache = new Map();
+    return function(x) {
+      if (cache.has(x)) {
+        return cache.get(x);
+      }
+      let result = func.call(this, x); // "this" ถึงส่งเข้าไปเรียบร้อยแล้ว
+      cache.set(x, result);
+      return result;
+    };
+  }
+  // -----------------------
+  worker.slow = cachingDecorator(worker.slow); // ทำการสร้าง cache
+
+  // -----------------------
+  alert( worker.slow(2) ); // works
+  alert( worker.slow(2) ); // works ทำงานใน cache
+
+
+
+
+  //---------------------------วิธีการ การ caching แบบหลายค่า ----------------
+  /*รวมสองค่าให้เป็นเหมือนกับค่า ค่าเดียวโดยวิธีการเปลี่ยนค่าเป็น String “min, max” เป็นค่า key ของ map 
+  เพื่อความง่ายต่อการใช้งานสามารถเขียน hashing ฟังก์ชัน เพื่อเปลี่ยนค่า min กับ max เป็น “min,max” ค่าเดียว
+
+
+  func.call สามารถรรับค่า pseudo-array ของ argument ที่รับเข้ามาด้วยตัวแปล arguments 
+  ดังนั้น func.call( this , x ) สามารถแทนค่าด้วยการเขียนดังนี้ func.call ( this, ...arguments)
+
+*/
+
+// เราจะมาทำ caching ของ worker.slow-------แบบหลายค่า
+let worker = {
+   slow(min, max) {
+      alert(`Calledwith${min},${max}`);
+      return min + max;
+    }
+};
+// -------------
+function hash(args) {
+    return args[0] + ',' + args[1];
+  }
+// --------------
+function cachingDecorator(func, hash) {
+    let cache = new Map();
+    return function() {
+      let key = hash(arguments); // arguments มีค่า [3,5]
+      if (cache.has(key)) {
+        return cache.get(key);
+      }
+      let result = func.call(this, ...arguments); 	// ...arguments กระจาย 3,5 ออกจาก [3,5]
+      cache.set(key, result);
+      return result;
+    };
+  }
+    // ----------------
+    worker.slow = cachingDecorator(worker.slow, hash);
+    // ----------------
+    
+  alert( worker.slow(3, 5) ); 
+  alert( "Again " + worker.slow(3, 5) ); // ใช้ค่า cached ที่เก็บไว้
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------------------Apply------------------------------------------
+//----------------------------จุดประสงค์คือการกำหนด This ให้กับ Funtionทีมีปัญหา เช่น This ชี้ไปที่ Global--------
+//-------------------------------------Apply จะเร็วกว่า Call--------------
+//-------------------func.apply(context, args);    aplly รับค่า argumentsแบบ มาทั้งก้อน
+
+// เราจะมาทำ caching ของ worker.slow
+let worker = {
+   slow(min, max) {
+      alert(`Calledwith${min},${max}`);
+      return min + max;
+    }
+};
+//-----------------
+function hash(args) {
+    return args[0] + ',' + args[1];
+  }
+//---------------
+function cachingDecorator(func, hash) {
+    let cache = new Map();
+    return function() {
+      let key = hash(arguments); // arguments มีค่า [3,5]
+      if (cache.has(key)) {
+        return cache.get(key);
+      }
+      let result = func.apply(this, arguments); 	// arguments รับค่าเป็น array-like obj = [3,5]
+      cache.set(key, result);
+      return result;
+    };
+  }
+//-------------------
+worker.slow = cachingDecorator(worker.slow, hash);
+  alert( worker.slow(3, 5) ); 
+  alert( "Again " + worker.slow(3, 5) ); // ใช้ค่า cached ที่เก็บไว้
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+     //---------------1.------------------------------- 
+
+        function work(a,b){
+            console.log(a+b);
+        }
+
+    //   ----------------
+    function spyDecorator(func) {
+        wrapper.call = []
+    return function wrapper (...arr) {
+        wrapper.call.push(arr)
+    func.apply(this,arr)
+    }
+
+    return wrapper
+}
+    //----------------
+
+    work = spyDecorator(work);
+  work(1, 2); // 3
+  work(4, 5); // 9
+  for (let args of work.calls) {
+    alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+  }
+  
+  
+  // -----------------------2.-------------------------------------
+
+  function f(x) {
+    alert(x);
+  }
+
+// --------------------
+function delayDecorator(func,ms) {
+        
+    return function  (...arr) {
+        setTimeout(()=>func.apply(this,arr) ,ms)
+        }
+}
+// ---------------------
+// -----------เรียกใช้งาน------------------------
+let f1000 = delay(f, 1000);
+  let f1500 = delay(f, 1500);
+  f1000("test"); // แสดง "test" หลังจาก 1000ms
+  f1500("test"); // แสดง "test" หลังจาก 1500ms
+
+  f = delayDecorator(f,2000)
+  f('hi')
+
+
+
+    </script>
+</body>
+</html>
