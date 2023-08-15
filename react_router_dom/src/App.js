@@ -1,7 +1,8 @@
 import React from 'react';
-import {BrowserRouter as Router ,Switch,Route,Link} from "react-router-dom"
+import {BrowserRouter as Router  ,Switch,Route,Link ,Routes} from "react-router-dom"
 
 import './App.css';
+import Home from './Home';
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
                       <Link to ="/">Home</Link>
                   </li>
                   <li>
-                      <Link to ="/About">About</Link>
+                      <Link to ="/about">About</Link>
                   </li>
                   <li>
                       <Link to ="/Topic">Topic</Link>
@@ -22,39 +23,39 @@ export default function App() {
 
 
             </nav>
-                <Switch>
-                    <Route path='/About'>
-                            <About />
-                    </Route>
-                    <Route path='/Topic'>
-                            <Topic />
-                    </Route>
-                    <Route path='/'>
-                            <Home />
-                    </Route>
+           
+               
+                  <Routes>
+                    <Route path="/about" element={<About />} />                  
+                    <Route path="/Home" element={<Home />} />                  
+                
+                  
+                        
+                    
 
+                    </Routes>
 
-                </Switch>
+           
 
       </Router>
   );
 }
 
-function Home() {
-  return (
-    <h1>HomePage</h1>
-    
-  )
-}
-function About() {
-  return (
-    <h1>About</h1>
-    
-  )
-}
-function Topic() {
-  return (
-    <h1>Topic</h1>
-    
-  )
-}
+// function Home() {
+//   return (
+//     <h1>HomePage</h1>
+//   )  
+  
+// }
+// function About() {
+//   return (
+//     <h1>About</h1>
+//     )
+  
+// }
+// function Topic() {
+//   return (
+//     <h1>Topic</h1>
+//   )
+  
+// }
