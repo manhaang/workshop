@@ -1,16 +1,19 @@
 import React from 'react';
-import { Switch,Route,Link } from "react-router-dom"
+import { Switch, Route, Link,Routes } from "react-router-dom"
+import Home from './Home';
+import About from './About';
+import Topic from './Topic';
 
 import './App.css';
 
 
 export default function App() {
   return (
-    <div className ='app'>
+    <div className='app'>
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -25,37 +28,14 @@ export default function App() {
       </nav>
 
 
-      <Switch>
-
-        <Route path="/about" component={About} />
-          
-        <Route path="/topic" component={Topic} />
-        
-        <Route path="/" component={Home} />
-         
-
-      </Switch>
+      <Routes>
+        <Route path="/about" element={<About />} /> 
+        <Route path="/Topic" element={<Topic />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
 
 
-      </div>
+    </div>
   );
 }
 
-function Home() {
-  return (
-    <h1>HomePage</h1>
-  )  
-  
-}
-function About() {
-  return (
-    <h1>About</h1>
-    )
-  
-}
-function Topic() {
-  return (
-    <h1>Topic</h1>
-  )
-  
-}
