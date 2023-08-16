@@ -2,7 +2,7 @@ body {
   margin:0 auto;
   font-family: 'Courier New', Courier, monospace;
   max-width:1000px;
-  background-color:#1E3231
+  background-color:#b0efec
   }
 
   nav{
@@ -16,7 +16,18 @@ body {
     display: flex;
     padding: 5px;
     list-style: none;
+    margin-bottom: 0;
    
     
   }
 
+  nav li {
+    padding: 5px;
+  }
+
+  nav a {
+    color: beige;
+    padding: 5px;
+  }
+
+ 
