@@ -15,6 +15,9 @@ function Nav() {
                 <li>
                     <Link to="/topic">Topic</Link>
                 </li>
+                <li>
+                    <Link to="/Geeeting">Greeting</Link>
+                </li>
 
             </ul>
 
