@@ -1,15 +1,24 @@
-import  React from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
+ 
 
 function Nav() {
-    return(
+    return (
         <nav>
-            <a> href="#"Home</a>
-            <a> href="#"About</a>
-            <a> href="#"Blog</a>
-            <a> href="#"Contact</a>
-            
-            
-            
+            <ul>
+                <li>
+                    <Link to="/home">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/topic">Topic</Link>
+                </li>
+
+            </ul>
+
+
         </nav>
     )
 
