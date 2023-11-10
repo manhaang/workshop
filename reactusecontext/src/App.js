@@ -1,19 +1,36 @@
-import logo from './logo.svg';
+import React, { useReducer, useState } from 'react';
 import './App.css';
-import Home from '../component/home'
-import Context, {Context2} from './Context'
+import LoginArea from'./LoginArea';
 
+function reducer(state, action){
+  if (action.type === 'login'){
+      const { username, fullname } = action.payload;
+      return { username, fullname};
+  }
+  if (action.type === 'logout'){
+      return null;
+  }
+  return state;
+}
+
+
+
+const AuthContext = React.createContext();
 
 function App() {
+  const [authState, authDispatch] = useReducer(reducer, null);
+
   return (
-    <Context.Provider value="content">
+    <AuthContext.Provider value={{ authState, authDispatch }}>
+      <section classNmae="app-section">
+        <div>
+          <LoginArea />
 
-
-    <Home/>
-
-
-    </Context.Provider>
+        </div>
+      </section>
+    </AuthContext.Provider>
   );
 }
 
+export {AuthContext};
 export default App;
