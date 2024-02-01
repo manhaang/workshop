@@ -1,19 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Home from '../component/home'
-import Context, {Context2} from './Context'
+import { useState } from 'react';
+import FirstComponent from './component/FirstComponent'
 
 
 function App() {
-  return (
-    <Context.Provider value="content">
+ 
+    const [data , setData] = useState({
+      name : "john Doe",
+      age : 30,
+      position : "Full Stack Develope"
 
+    })
 
-    <Home/>
+    return (
+      
+        <div>
+          <FirstComponent data={data} />
 
+        </div>
 
-    </Context.Provider>
-  );
+      
+
+  )
 }
 
-export default App;
+export default App
